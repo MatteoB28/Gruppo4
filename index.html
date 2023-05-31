@@ -4,13 +4,47 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progetto Gruppo 4: Home</title>
 	<link rel="icon" href="Icona_sito512.png" type="image/png">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Home.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,-25" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,-25" />
+	<script>
+		var isAnim = false
+		function animationmenu(){
+			var e1 = document.getElementById("elem1");
+			var e2 = document.getElementById("elem2");
+			var e3 = document.getElementById("elem3");
+			var e4 = document.getElementById("elem4");
+			if (!isAnim){
+				e2.innerText = "close"
+			
+				e3.style.left = "0px";
+				e3.style.transition = "1s all";
+				
+				e4.style.opacity = "0.4";
+				
+				document.body.style.overflow = "hidden";
+				
+				isAnim = true;
+			} else {
+				e2.innerText = "menu"
+			
+				e3.style.left = "-352px";
+				e3.style.transition = ".5s all";
+				
+				e4.style.opacity = "0";
+				
+				document.body.style.overflow = "auto";
+				
+				isAnim = false;
+			}
+		}
+	</script>
 </head>
 <body>
     <div class="header">
-		<button class="hamburger-menu">
-			<span class="material-symbols-outlined">
+		<button id="elem1" class="hamburger-menu" onclick="animationmenu()">
+			<span id="elem2" class="material-symbols-outlined">
 			menu
 			</span>
 		</button>
@@ -20,8 +54,10 @@
 		</div>
 		<img src="logopoli.png" class="logo">
 	</div>
-	<div class="menu">
+	<div id="elem3" class="menu">
 		
+	</div>
+	<div id="elem4" class="ombra">
 	</div>
 	<div class="sez1">
 	
