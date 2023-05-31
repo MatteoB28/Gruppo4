@@ -32,3 +32,9 @@ body {
 		width: 90%; /* Ripristina la larghezza predefinita per schermi più grandi di 600px */
 	}
 }
+
+footer {
+	width: 100%;
+	background-color: #55433C;
+	height: 200px;
+}
