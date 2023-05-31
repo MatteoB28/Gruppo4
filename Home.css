@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@300;400&family=Montserrat:wght@200;300;400&family=Nunito:wght@300;400;500;600;700;800;900;1000&family=Playfair+Display:wght@400;500;600;700;800;900&family=Signika+Negative:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -29,6 +31,9 @@ body {
 	color: #CE7553;
 	background-color: #FED6B2;
 	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	transition: .5s all;
 	padding: 0;
 }
@@ -36,6 +41,7 @@ body {
 	color: #FED6B2;
 	background-color: #CE7553;	
 	transition: .5s all;
+	cursor: pointer;
 }
 .material-symbols-outlined {
 	vertical-align: center;
@@ -43,18 +49,45 @@ body {
 }
 
 .intestazione {
-	background-color: red;
-	height: 150px;
-	width: 50px;
+	max-height: 150px;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
+	text-align: center;
 }
+.title {
+	color: #2B6723;
+	font-family: 'Anton', sans-serif;
+	font-size: 30px;
+	margin: 0px;
+}
+.subtitle {
+	color: #609B53;
+	margin-top: 20px;
+}	
 
 .logo {
 	position: relative;
 	margin-right: 5%;
 	max-height: 150px;
+}
+@media (max-width: 970px) {
+	.logo {
+		display: none;
+	}
+}
+
+.menu {
+	width: 30%;
+	box-shadow: none;
+	background-color: #FED6B2;
+	position: fixed;
+	display: flex;
+	height:100%;
+	left: -30%;
+	top: 150px;
+	z-index: 21;
+	border-top: 4px solid #55433C;
 }
 
 /* corpo pagina */
@@ -69,7 +102,7 @@ body {
 
 @media (max-width: 700px) {
     .sez1 {
-		width: 90%; /* Ripristina la larghezza predefinita per schermi più grandi di 600px */
+		width: 90%;
 	}
 }
 
