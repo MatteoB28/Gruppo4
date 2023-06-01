@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruppo 4: La Cimice Asiatica</title>
+	<link rel="icon" href="Icona_sito512.png" type="image/png">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="Home.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,-25" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,-25" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,-25" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,-25" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,-25" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,-25" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,-25" />
+	<script>
+		var isAnim = false
+		function animationmenu(){
+			var e1 = document.getElementById("elem1");
+			var e2 = document.getElementById("elem2");
+			var e3 = document.getElementById("elem3");
+			var e4 = document.getElementById("elem4");
+			if (!isAnim){
+				e2.innerText = "close";
+			
+				e3.style.left = "0px";
+				e3.style.transition = "1s all";
+				
+				e4.style.opacity = "0.4";
+				
+				document.body.style.overflow = "hidden";
+				
+				isAnim = true;
+			} else {
+				e2.innerText = "menu"
+			
+				e3.style.left = "-352px";
+				e3.style.transition = ".5s all";
+				
+				e4.style.opacity = "0";
+				
+				document.body.style.overflow = "auto";
+				
+				isAnim = false;
+			}
+		}
+		
+		
+		window.onscroll = function() { scrollFunction() };
+		function scrollFunction() {
+			if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+				document.getElementById("back-to-top-btn").classList.add("show");
+			} else {
+				document.getElementById("back-to-top-btn").classList.remove("show");
+			}
+		}
+		function scrollToTop() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+</head>
+<body>
+	<!-- struttura header e menu -->
+    <div class="header">
+		<button class="hamburger-menu" onclick="animationmenu()">
+			<span id="elem2" class="material-symbols-outlined" style="font-size: 30px !important;">menu</span>
+		</button>
+		
+		<div class="intestazione">
+			<p class="title">NOCCIOLE E CAMBIAMENTO CLIMATICO</p>
+			<p class="subtitle">Dalla Tuscia alle Langhe</p>
+		</div>
+		
+		<img src="logopoli.png" class="logo">
+	</div>
+	
+	<div id="elem3" class="menu">
+		<ul id="elem1" class="ipertext">
+			<li class="elenco"><a class="pagine" href="index.html"><span class="material-symbols-outlined icone">home</span>Home</a></li>
+			<li class="elenco"><a class="pagine" href="Presentazione e Dati Raccolti.html"><span class="material-symbols-outlined icone">monitoring</span>Presentazione e Dati Raccolti</a></li>
+			<li class="elenco"><a class="pagine" href="Intervista.html"><span class="material-symbols-outlined icone">quiz</span>Invervista</a></li>
+			<li class="elenco"><a class="pagine" href="La Cimice Asiatica.html"><span class="material-symbols-outlined icone">pest_control</span>La Cimice Asiatica</a></li>
+		</ul>
+	</div>
+	
+	<div id="elem4" class="ombra">
+	</div>
+	
+	<!-- inizio corpo pagina -->
+	<div class="sez1">
+		<p class="pagetitle">La Cimice Asiatica</p>
+	</div>
+	
+	<button id="back-to-top-btn" onclick="scrollToTop()"><span class="material-symbols-outlined" style="font-size: 40px !important;">expand_less</span></button>
+	
+	<footer>
+		<p class="thanks"><b>Il progetto a voi presentato tramite questo sito, è stato realizzato per il Corso di Credito Libero "Evidenze, Modelli e Percezione del Cambiamento Climatico" del Politecnico di Torino.<br>
+		La raccolta delle informazioni, le interviste e queste pagine web sono frutto della collaborazione e degli sforzi del Gruppo 4.</b></p>
+		<p class="thanks">I membri del Gruppo 4 sono:<br>
+		Matteo Benedetti, matricola S281905<br>
+		Alice Bonesio, matricola S283179<br>
+		Eleonora Beccaria, matricola S273617<br>
+		Bocco Samuele, matricola S283197<br>
+		Angelo Bassi, matricola S298465</p>
+	</footer>
+</body>
+</html>
