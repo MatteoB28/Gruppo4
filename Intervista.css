@@ -152,20 +152,20 @@ body {
 	width: 70px;
 	height: 70px;
 	border-radius: 50%;
-	background-color: #CE7553;
-	color: #FED6B2;
+	background-color: #FED6B2;
+	color: #CE7553;
 	border: none;
 	outline: none;
 	cursor: pointer;
 	opacity: 0;
-	transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out, background-color 0.3s, color 0.3s;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-#back-to-top-btn {
-	background-color: #FED6B2;
-	color: #CE7553;
+#back-to-top-btn:hover {
+	background-color: #CE7553;
+	color: #FED6B2;
 }
 #back-to-top-btn.show {
   opacity: 1;
