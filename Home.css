@@ -13,7 +13,7 @@ body {
 .header {
 	position: absolute;
 	width: 100%;
-	background-color: #FED6B2;
+	background-image: linear-gradient(to bottom, #fed6b2, #fddaba, #fbdec3, #fae1cb, #f8e5d4);
 	height: 150px;
 	z-index: 20;
 	box-shadow: 0px 10px 50px 0px;
@@ -99,7 +99,7 @@ body {
 .menu {
 	width: 350px;
 	box-shadow: none;
-	background-color: #FED6B2;
+	background-image: linear-gradient(to bottom, #fed6b2, #fddaba, #fbdec3, #fae1cb, #f8e5d4);
 	position: absolute;
 	display: flex;
 	height: 100%;
@@ -123,13 +123,14 @@ body {
 
 /* corpo pagina */
 .sez1 {
-	height: 2500px;
+	min-height: 700px;
 	background-color: white;
 	width: 80%;
 	margin: auto;
 	z-index: 1;
 	box-shadow: 0px 0px 100px 20px;
 	display: flex;
+	flex-direction: column;
 }
 .pagetitle {
 	font-size: 40px;
@@ -138,7 +139,6 @@ body {
 	margin: 180px 0 0 0;
 	text-align: center;
 }
-
 @media (max-width: 700px) {
     .sez1 {
 		width: 90%;
