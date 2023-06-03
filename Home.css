@@ -119,6 +119,7 @@ body {
 	background-color: #55433C;
 	opacity: 0;
 	transition: .5s all;
+	display: none;
 }
 
 /* corpo pagina */
@@ -193,9 +194,11 @@ body {
 	display: flex;
 	align-items: center;
 	font-size: 22px;
+	transition: .2s all;
 }
 .pagine:hover {
 	color: #609B53;
+	transition: .2s all;
 }
 
 .content{
@@ -214,10 +217,11 @@ body {
 .idea {
 	margin: 30px 5% 0 5%;
 	font-size: 22px;
+	color: #609B53;
 }
 
 .conclusione {
-	background-image: linear-gradient(to top, #fed6b2, #fddaba, #fbdec3, #fae1cb, #f8e5d4);
+	background-color: #fed6b2;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -237,7 +241,7 @@ body {
 	flex: 1;
 }
 .obiettivo {
-	padding: 0 30px;
+	padding: 0 0 0 30px;
 	margin: 0;
 }
 
@@ -254,15 +258,77 @@ body {
 }
 
 
-
-
 /* Contenuto pagina Presentazione*/
 
 
 /* Contenuto pagina Intervista*/
+.colleg {
+	color: #55433C;
+	padding: 0px;
+	transition: .2s all;
+}
+.colleg:hover {
+	color: #BDA69E;
+	transition: .2s all;
+}
 
+.question {
+	padding: 0;
+	margin: 20px 5% 0 5%;
+	font-size: 25px;
+}
+
+.answer {
+	padding: 0 0 0 30px;
+	margin: 5px 5% 0 5%;
+	font-size: 20px;
+	line-height: 1.5;
+}
+.answer li {
+	margin: 10px 0 0 0;
+}
 
 /* Contenuto pagina Cimice*/
+.cimice {
+	float: right;
+	margin: 0 0 10px 5%;
+	width: 25%;
+	box-shadow: -7px 7px 20px;
+}
+
+.puntura {
+	width: 25%;
+	float: left;
+	margin: 10px 5% 10px 0;
+	position: relative;
+	box-shadow: 7px -7px 20px;
+}
+
+@media (max-width: 850px) {
+	.cimice {
+		width: 40%;
+	}
+	.puntura {
+		width: 40%;
+	}
+}
+@media (max-width: 600px) {
+	.cimice {
+		width: 100%;
+		margin: auto;
+		position: relative;
+		box-shadow: 0px 5px 20px;
+	}
+	.puntura {
+		width: 100%;
+		margin: auto;
+		position: relative;
+		box-shadow: 0px 5px 20px;
+	}
+	#wiki {
+		text-align: left;
+	}
+}
 
 
 /* sezione finale footer */
