@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@300;400&family=Montserrat:wght@200;300;400&family=Nunito:wght@300;400;500;600;700;800;900;1000&family=Playfair+Display:wght@400;500;600;700;800;900&family=Signika+Negative:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@300;400;500;600&family=Nunito:wght@500;600;700;800;900;1000&family=Source+Sans+Pro:wght@200;300;400;600&display=swap');
 
 body {
     margin: 0;
@@ -13,7 +13,7 @@ body {
 .header {
 	position: absolute;
 	width: 100%;
-	background-image: linear-gradient(to bottom, #fed6b2, #fddaba, #fbdec3, #fae1cb, #f8e5d4);
+	background-image: linear-gradient(to bottom, #fed6b2, #fddaba, #fbdec3, #fae1cb, #f8e5d4, #fae1cb, #fbdec3, #fddaba, #fed6b2);
 	height: 150px;
 	z-index: 20;
 	box-shadow: 0px 10px 50px 0px;
@@ -53,16 +53,19 @@ body {
 }
 .title {
 	color: #2B6723;
-	font-family: 'Anton', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	font-size: 30px;
 	margin: 0px;
+	font-weight: 900;
 }
 .subtitle {
 	color: #609B53;
 	margin-top: 20px;
 	font-size: 25px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 800;
 }
-@media (max-width: 600px) {
+@media (max-width: 835px) {
 	.intestazione {
 		width: 70%;
 	}
@@ -73,15 +76,15 @@ body {
 		font-size: 20px;
 	}
 }
-@media (max-width: 375px) {
+@media (max-width: 505px) {
 	.intestazione {
-		width: 70%;
+		width: 65%;
 	}
 	.title {
-		font-size: 22px;
+		font-size: 20px;
 	}
 	.subtitle {
-		font-size: 17px;
+		font-size: 15px;
 	}
 }
 
@@ -90,7 +93,7 @@ body {
 	margin-right: 5%;
 	max-height: 150px;
 }
-@media (max-width: 970px) {
+@media (max-width: 950px) {
 	.logo {
 		display: none;
 	}
@@ -134,11 +137,13 @@ body {
 	flex-direction: column;
 }
 .pagetitle {
-	font-size: 60px;
+	font-size: 50px;
 	width: 100%;
 	color: #2B6723;
 	margin: 185px 0 0 0;
 	text-align: center;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 900;
 }
 @media (max-width: 700px) {
     .sez1 {
@@ -181,6 +186,8 @@ body {
 .elenco {
 	padding: 0px;
 	margin: 60px 0 0 15px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
 }
 .icone {
 	font-size: 30px !important;
@@ -205,6 +212,8 @@ body {
 	font-size: 20px;
 	margin: 20px 5% 0px 5%;
 	line-height: 2;
+	font-family: 'Montserrat', sans-serif; 
+	font-weight: 400;
 }
 
 /* Contenuto pagina Home*/
@@ -218,10 +227,12 @@ body {
 	margin: 30px 5% 0 5%;
 	font-size: 22px;
 	color: #609B53;
+	font-family: 'Montserrat', sans-serif; 
+	font-weight: 600;
 }
 
 .conclusione {
-	background-color: #fed6b2;
+	background-image: linear-gradient(to bottom, #fed6b2, #fddaba, #fbdec3, #fae1cb, #f8e5d4, #fae1cb, #fbdec3, #fddaba, #fed6b2);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -239,6 +250,9 @@ body {
 	font-size: 20px;
 	margin: 0 20px;
 	flex: 1;
+	font-family: 'Montserrat', sans-serif; 
+	font-weight: 400;
+	font-style: italic;
 }
 .obiettivo {
 	padding: 0 0 0 30px;
@@ -347,6 +361,8 @@ footer {
 	margin: 20px auto;
 	max-width: 400px;
 	line-height: 1.5;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
 }
 @media (max-width: 750px) {
     .thanks {
