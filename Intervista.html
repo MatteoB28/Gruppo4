@@ -56,6 +56,32 @@
 			document.body.scrollTop = 0;
 			document.documentElement.scrollTop = 0;
 		}
+		
+		function isInViewport(element) {
+			var rect = element.getBoundingClientRect();
+			return (
+			rect.top >= 0 &&
+			rect.left >= 0 &&
+			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+			rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		}
+
+		function updateWidth() {
+			var div1 = document.getElementById('sliding_box1');
+			var div2 = document.getElementById('sliding_box2');
+			if (isInViewport(div1)) {
+				div1.style.width = '0';
+				div1.style.left = '100%';
+			}
+			if (isInViewport(div2)) {
+				div2.style.width = '0';
+				div2.style.right = '100%';
+			}
+		}
+
+		window.addEventListener('scroll', updateWidth);
+		window.addEventListener('resize', updateWidth);
 	</script>
 </head>
 <body>
@@ -101,47 +127,57 @@
 		
 		<div class="container">
 			<div class="interview">
+				<p class="f1">Per il territorio delle Langhe abbiamo intervistato:</p>
+				<p class="content" style="font-style: italic;"><b>Carlo Manina</b> da <b>Relanghe SRL</b>, sede a Barolo (CN)</p>
+				<p class="content" style="font-style: italic;"><b>Giancarlo Forno</b> da <b>Barbero Nocciole SRL</b>, sede a Santo Stefano Belbo (CN)</p>
+				
 				<div id="sliding_box1"></div>
-				<p>Per il territorio delle Langhe abbiamo:</p>
-				<p></p>
 			</div>
 			
 			<div class="interview">
+				<p class="f3">Per il territorio della Tuscia abbiamo intervistato:</p>
+				<p class="content" style="font-style: italic; text-align: right;"><b>Danilo Rita</b> dall'<b>Azienda Agricola di Bigoni Laura</b>, sede a Vasanello (VT)</p>
+				<p class="content" style="font-style: italic; text-align: right;"><b>Domenico Stragapede</b> dall'<b>Azienda Agricola di Pieri Patrizia</b>, sede a Vasanello (VT)</p>
+				
 				<div id="sliding_box2"></div>
-				<p>Per il territorio della Tuscia abbiamo:</p>
-				<p></p>
 			</div>
 		</div>
 		
 		<p class="question">1) Da quanti anni lavora in questo settore?</p>
 		<ul class="answer">
-			<li>Carlo Manina:</li>
-			<li>Giancarlo Forno: "Lavoro in questo settore da circa 12 anni."</li>
-			<li>Danilo Rita: "Lavoro in questo settore da quando sono bambino. La mia famiglia possedeva già una
+			<li><span style="color: #BDA69E">Carlo Manina</span>: "Lavoro nel settore della nocciola da 10 anni, ma ci tengo a precisare che la mia famiglia
+			possedeva nocciole e fin da quando ero bambino li aiutavo nella coltivazione."</li>
+			<li><span style="color: #BDA69E">Giancarlo Forno</span>: "Lavoro in questo settore da circa 12 anni."</li>
+			<li><span style="color: #BDA69E">Danilo Rita</span>: "Lavoro in questo settore da quando sono bambino. La mia famiglia possedeva già una
 			buona quantità di terreno. Mio padre mi portò a lavorare insieme a lui e da lì è iniziato il mio
 			rapporto annuale con le nocciole. All'inizio le nostre proprietà erano divise in vigneti e
 			noccioleti, poi prendendo in considerazione gli sforzi richiesti per portare avanti due tipi di
 			colture con frutti così diversi tra di loro, abbiamo deciso di concentrarci solo sulle nocciole.
 			Anno dopo anno abbiamo annesso nuove zone di terreno coltivabile. Ora la mia azienda può
 			vantare di più di 15 ettari di nocciole."</li>
-			<li>Domenico Stragapede:</li>
+			<li><span style="color: #BDA69E">Domenico Stragapede</span>:</li>
 		</ul>
 		<p class="question">2) Di quanto è variato il periodo di raccolta della nocciola?</p>
 		<ul class="answer">
-			<li>Carlo Manina:</li>
-			<li>Giancarlo Forno: "Il periodo di raccolta negli anni non ha subito cambiamenti, può subire ritardi o anticipi di massimo 10 giorni di stagione in stagione."</li>
-			<li>Danilo Rita: "Solitamente nella nostra zona il periodo di raccolta si concentrava negli ultimi giorni di
+			<li><span style="color: #BDA69E">Carlo Manina</span>: "Il periodo di raccolta della nocciola non è cambiato (se non di qualche giorno, a causa di
+			fenomeni atmosferici, piogge o temperature troppo elevate durante le ultime settimane prima della
+			raccolta). La raccolta della nocciola avviene solitamente dopo la settimana di Ferragosto, agenti atmosferici permettendo."</li>
+			<li><span style="color: #BDA69E">Giancarlo Forno</span>: "Il periodo di raccolta negli anni non ha subito cambiamenti, può subire ritardi o anticipi di massimo 10 giorni di stagione in stagione."</li>
+			<li><span style="color: #BDA69E">Danilo Rita</span>: "Solitamente nella nostra zona il periodo di raccolta si concentrava negli ultimi giorni di
 			settembre. Il grosso del lavoro veniva fatto nel giro di massimo due settimane. Negli ultimi
 			anni invece, il periodo di raccolta è stato anticipato e soprattutto prolungato. Si inizia nella
 			seconda metà di agosto e si continua fino a buona parte di settembre. Non tutte le nocciole
 			sono pronte allo stesso momento, quindi continuiamo a raccogliere finché possiamo."</li>
-			<li>Domenico Stragapede:</li>
+			<li><span style="color: #BDA69E">Domenico Stragapede</span>:</li>
 		</ul>
 		<p class="question">3) Ci sono variazioni importanti sulla quantità del raccolto negli ultimi anni?</p>
 		<ul class="answer">
-			<li>Carlo Manina:</li>
-			<li>Giancarlo Forno: "Direi proprio di sí, negli ultimi 10 anni le quantità dei raccolti hanno subito una flessione di circa il 30%."</li>
-			<li>Danilo Rita: "Sì, direi che ci sono state variazioni nella quantità di nocciole raccolte negli ultimi anni, ma
+			<li><span style="color: #BDA69E">Carlo Manina</span>: "Ebbene sì, ma del resto ci sono sempre state. Bisogna considerare che la nocciola è una pianta
+			altalenante, un anno produce di più mentre l’anno successivo può essere calante (tralasciando
+			agenti atmosferici quali piogge torrenziali, grandine e temporali ventosi).
+			Un ettaro produce mediamente 18Q di nocciole in un’annata normale, l’anno successivo può produrne anche solo 10Q a ettaro."</li>
+			<li><span style="color: #BDA69E">Giancarlo Forno</span>: "Direi proprio di sí, negli ultimi 10 anni le quantità dei raccolti hanno subito una flessione di circa il 30%."</li>
+			<li><span style="color: #BDA69E">Danilo Rita</span>: "Sì, direi che ci sono state variazioni nella quantità di nocciole raccolte negli ultimi anni, ma
 			in positivo. Per fortuna nel nostro territorio quasi tutti gli agricoltori utilizzano sistemi di
 			irrigazione o mezzi che ci permettono comunque di portare avanti il normale processo di
 			sviluppo e raccolta della nocciola senza risentirne troppo in quantità. Il nocciolo è una pianta
@@ -151,40 +187,56 @@
 			esempio metodi di concimazione) e piccole accortezze che permettono alla pianta di soffrire
 			il meno possibile. Nel mio caso, negli ultimi 10 anni i quintali di nocciole per ettaro sono
 			quasi raddoppiati."</li>
-			<li>Domenico Stragapede:</li>
+			<li><span style="color: #BDA69E">Domenico Stragapede</span>:</li>
 		</ul>
 		<p class="question">4) La qualità delle nocciole è peggiorata? Se sì, in che modo?</p>
 		<ul class="answer">
-			<li>Carlo Manina:</li>
-			<li>Giancarlo Forno: "Oltre alla quantità è diminuita anche la qualità, per via della puntura di cimice asiatica sul frutto in maturazione."</li>
-			<li>Danilo Rita: "No, non direi che la qualità della nocciola è stata intaccata eccessivamente. L'unica cosa
+			<li><span style="color: #BDA69E">Carlo Manina</span>: "Sì, la qualità delle nocciole è peggiorata. Abbiamo sempre più un frutto ‘non bello’ e pertanto non
+			utilizzabile dovuto specialmente alla presenza di cimice asiatica. Questo insetto è molto difficile
+			da sconfiggere, nell’ultimo anno si è cercato di eliminarlo con delle trappole apposite (seppur con scarsi risultati).
+			Un altro fattore da considerare è l’innalzamento delle temperature che ha portato ad avere un
+			frutto non sviluppato, piccolo, grinzo e marcio."</li>
+			<li><span style="color: #BDA69E">Giancarlo Forno</span>: "Oltre alla quantità è diminuita anche la qualità, per via della puntura di cimice asiatica sul frutto in maturazione."</li>
+			<li><span style="color: #BDA69E">Danilo Rita</span>: "No, non direi che la qualità della nocciola è stata intaccata eccessivamente. L'unica cosa
 			portata dal cambiamento climatico che mette a rischio la qualità del prodotto è la cimice
 			asiatica, ormai presente su tutto il territorio nazionale. Questa cimice punge la pianta
 			durante la fase di sviluppo delle nocciole, e questo comporta un imbrunimento della nocciola
 			stessa e un sapore più amaro. Anche questo problema però è stato combattuto abbastanza
 			in fretta, ed io così come tutti i miei colleghi utilizziamo prodotti che allontanano questo
 			insetto. Chi a più, chi a meno impatto sull'ambiente."</li>
-			<li>Domenico Stragapede:</li>
+			<li><span style="color: #BDA69E">Domenico Stragapede</span>:</li>
 		</ul>
 		<p class="question">5) Quanto e come ha influito la siccità e la scarsità di piogge sulla coltivazione?</p>
 		<ul class="answer">
-			<li>Carlo Manina:</li>
-			<li>Giancarlo Forno: "La scarsità di piogge ha generato una percentuale del 10-15% di prodotto sottocalibro."</li>
-			<li>Danilo Rita: "Il problema della scarsità di piogge è durato molto poco nel mio caso. Quasi da subito ho
+			<li><span style="color: #BDA69E">Carlo Manina</span>: "Vorrei precisare che la scarsità di piogge è stata riscontrata solo nell’anno passato, ma possiamo
+			dire che la nocciola non ha patito più di tanto questo cambiamento. Invece se si parla di
+			innalzamento delle temperature, soprattuto nel periodo estivo, la nocciola ne ha patito, perché la
+			pianta ha cominciato a generare un frutto con delle problematiche (non ben sviluppato o difficile
+			nella pelatura).
+			Bisogna anche precisare che ormai le piantagioni di nocciola si sono sviluppate anche nelle
+			pianure. E’ giusto sottolineare che in questi posti la nocciola ha bisogno di maggior cura (ad
+			esempio di impianti di irrigazione), perché il suo l’habitat ottimale è solito essere al di sopra di 400
+			m.s.l.m.
+			Purtroppo l’industria ha fatto sì che il quantitativo di produzione non bastasse più per far fronte
+			alla richiesta d’acquisto e avendo notato che la pianta rispondeva bene alla coltivazione in
+			pianura, hanno iniziato a trasferirla anche in queste zone."</li>
+			<li><span style="color: #BDA69E">Giancarlo Forno</span>: "La scarsità di piogge ha generato una percentuale del 10-15% di prodotto sottocalibro."</li>
+			<li><span style="color: #BDA69E">Danilo Rita</span>: "Il problema della scarsità di piogge è durato molto poco nel mio caso. Quasi da subito ho
 			introdotto un sistema di irrigazione (in particolare i cosiddetti impianti di irrigazione a goccia).
 			Ogni impianto è collegato ad un pozzo (di proprietà dell'agricoltore). Quasi tutti i miei colleghi
 			agricoltori utilizzano un impianto simile ed hanno il proprio pozzo per potersi rifornire
 			d'acqua. Essendo Vasanello un paese a circa 3-400m sopra il livello del mare, quasi mai mi
 			è capitato di sentire che l'acqua nei pozzi stesse scarseggiando; quindi fino ad ora è stato un
 			metodo sicuro ed efficace."</li>
-			<li>Domenico Stragapede:</li>
+			<li><span style="color: #BDA69E">Domenico Stragapede</span>:</li>
 		</ul>
 		<p class="question">6) Quali sono le perdite economiche causate da questo cambiamento?</p>
 		<ul class="answer">
-			<li>Carlo Manina:</li>
-			<li>Giancarlo Forno: "Le perdite economiche sono state percepite per la maggior parte delle aziende agricole per i motivi indicati sopra, da calcolare 
+			<li><span style="color: #BDA69E">Carlo Manina</span>: "Per i corilicoltori la perdita economica è stata ottenere rese sempre più basse (visto che il prezzo
+			della nocciola è legato al punto resa)."</li>
+			<li><span style="color: #BDA69E">Giancarlo Forno</span>: "Le perdite economiche sono state percepite per la maggior parte delle aziende agricole per i motivi indicati sopra, da calcolare 
 			tra il 30 e i 40 % rispetto a 10 anni fa."</li>
-			<li>Danilo Rita: "Nel mio caso specifico, le perdite economiche sono state quasi nulle. Sicuramente le
+			<li><span style="color: #BDA69E">Danilo Rita</span>: "Nel mio caso specifico, le perdite economiche sono state quasi nulle. Sicuramente le
 			spese per la manutenzione degli impianti e per l'introduzione di nuove pratiche sono
 			aumentate, ma lo definirei più come un investimento a lungo termine che come una perdita di alcun tipo.
 			Per gli agricoltori che invece non hanno voluto aggiornarsi e hanno trattato il problema in
@@ -197,13 +249,17 @@
 			In ogni caso, per tutelarmi da problemi futuri, già da 2 anni pago un'assicurazione che mi
 			protegga da grosse perdite causate da un raccolto scarso o dal cambiamento climatico in
 			generale. Prevenire è meglio che curare."</li>
-			<li>Domenico Stragapede:</li>
+			<li><span style="color: #BDA69E">Domenico Stragapede</span>:</li>
 		</ul>
 		<p class="question">7) Secondo la sua esperienza, le grandi aziende sono più interessate alla quantità o alla qualità del prodotto ottenuto?</p>
 		<ul class="answer">
-			<li>Carlo Manina:</li>
-			<li>Giancarlo Forno: "Le grandi aziende dolciarie seppur sempre in crescita con le quantità, sono sempre più esigenti sulla qualità del prodotto."</li>
-			<li>Danilo Rita: "Un grande nome che mi viene subito in mente sicuramente è la Ferrero. La maggior parte
+			<li><span style="color: #BDA69E">Carlo Manina</span>: "Con grande rammarico le grandi aziende sono sempre più interessate alla quantità, ecco perchè
+			secondo me la nocciola TGT/IGP/IGP LANGHE, non riesce ad avere il successo che invece ha
+			ottenuto il nostro vino (barolo, barbaresco ecc).
+			Però ho notato che stanno nascendo sempre più piccoli laboratori artigianali gestiti da giovani che
+			cercano di valorizzare il prodotto e la qualità."</li>
+			<li><span style="color: #BDA69E">Giancarlo Forno</span>: "Le grandi aziende dolciarie seppur sempre in crescita con le quantità, sono sempre più esigenti sulla qualità del prodotto."</li>
+			<li><span style="color: #BDA69E">Danilo Rita</span>: "Un grande nome che mi viene subito in mente sicuramente è la Ferrero. La maggior parte
 			di noi fa capo a loro nella Tuscia.
 			Si concentrano molto sulla qualità, però sicuramente non danno attenzione a colture di tipo
 			biologico, per 3 motivi principali: tipo di nocciola, costi e quantità di prodotto fornito.
@@ -215,13 +271,15 @@
 			rispondere meglio alla richiesta generata dalle grandi aziende. Infine, inutile dire che i costi
 			di produzione e manutenzione sono altissimi per loro, e di conseguenza la Ferrero sarebbe
 			costretta a pagare cifre molto più alte per la stessa quantità di nocciole."</li>
-			<li>Domenico Stragapede:</li>
+			<li><span style="color: #BDA69E">Domenico Stragapede</span>:</li>
 		</ul>
 		<p class="question">8) In che modo ha affrontato finora il Cambiamento Climatico? Sono state introdotte nuove tecnologie o metodi? Se sì, quali e come funzionano?</p>
 		<ul class="answer">
-			<li>Carlo Manina:</li>
-			<li>Giancarlo Forno: "Per ora il primo tema del cambiamento climatico è la siccità e per questo i nuovi impianti corilicoli vengono dotati di irrigazione."</li>
-			<li>Danilo Rita: "Oltre che con l'impianto di irrigazione di cui parlavo prima, ci sono diverse nuove
+			<li><span style="color: #BDA69E">Carlo Manina</span>: "Come già ribadito nel punto 5, le piantagioni in pianura hanno adottato tecnologie di irrigazione.
+			Mentre per quanto riguarda le piantagioni allocate in zone superiori ai 400 m.s.l.m. non sono state
+			introdotte, per il semplice fatto che non ce n’è bisogno."</li>
+			<li><span style="color: #BDA69E">Giancarlo Forno</span>: "Per ora il primo tema del cambiamento climatico è la siccità e per questo i nuovi impianti corilicoli vengono dotati di irrigazione."</li>
+			<li><span style="color: #BDA69E">Danilo Rita</span>: "Oltre che con l'impianto di irrigazione di cui parlavo prima, ci sono diverse nuove
 			procedure che vengono utilizzate, tra cui principalmente metodi di concimazione.
 			Una procedura in particolare però potrebbe interessarvi, e consiste nell'applicare la polvere
 			di caolino sulla pianta durante il periodo di sviluppo del frutto. Questa polvere bianca viene
@@ -236,24 +294,26 @@
 			un macchinario che trova la sua utilità nei periodi di gelate e di caldo arido, che per far fronte
 			alla morte delle foglie nella parte superiore, lavora il terreno intorno alle radici in modo da
 			ossigenarlo e permettere alla pianta di sopravvivere in condizioni climatiche avverse."</li>
-			<li>Domenico Stragapede:</li>
+			<li><span style="color: #BDA69E">Domenico Stragapede</span>:</li>
 		</ul>
 		<p class="question">9) Il consumatore risente in qualche modo delle modifiche adottate dall'azienda per fronteggiare questo cambiamento?</p>
 		<ul class="answer">
-			<li>Carlo Manina:</li>
-			<li>Giancarlo Forno: "Il consumatore per ora sui prodotti nocciola non percepisce alcuna modifica adottata dalle aziende."</li>
-			<li>Danilo Rita: "No, non credo che il consumatore si accorga in alcun modo delle modifiche che
+			<li><span style="color: #BDA69E">Carlo Manina</span>: "Il consumatore ne risente soprattutto dal punto di vista economico, per quanto riguarda le
+			quantità prodotte e non tanto per le tecnologie introdotte volte a fronteggiare i cambiamenti
+			climatici (meno frutto viene prodotto e più alto è il costo di vendita.)"</li>
+			<li><span style="color: #BDA69E">Giancarlo Forno</span>: "Il consumatore per ora sui prodotti nocciola non percepisce alcuna modifica adottata dalle aziende."</li>
+			<li><span style="color: #BDA69E">Danilo Rita</span>: "No, non credo che il consumatore si accorga in alcun modo delle modifiche che
 			apportiamo ogni anno ai nostri terreni, soprattutto considerando che sono modifiche che si
 			concentrano sul mantenere la qualità della nocciola invariata. Se si notassero,
 			probabilmente vorrebbe dire che abbiamo sbagliato qualcosa nel nostro lavoro. Le aziende
 			importanti inoltre, stanno sempre molto attente a chi sono i loro fornitori."</li>
-			<li>Domenico Stragapede:</li>
+			<li><span style="color: #BDA69E">Domenico Stragapede</span>:</li>
 		</ul>
 		<p class="question">10) C'è qualche aspetto positivo del Cambiamento Climatico che ha potuto riscontrare?</p>
 		<ul class="answer">
-			<li>Carlo Manina:</li>
-			<li>Giancarlo Forno: "Io credo che i cambiamenti climatici non diano nessun vantaggio e a nessuno."</li>
-			<li>Danilo Rita: "No, non penso ci sia alcun aspetto positivo osservabile nel cambiamento climatico a cui
+			<li><span style="color: #BDA69E">Carlo Manina</span>: "Per ora non ci sono aspetti positivi, ma solo negativi."</li>
+			<li><span style="color: #BDA69E">Giancarlo Forno</span>: "Io credo che i cambiamenti climatici non diano nessun vantaggio e a nessuno."</li>
+			<li><span style="color: #BDA69E">Danilo Rita</span>: "No, non penso ci sia alcun aspetto positivo osservabile nel cambiamento climatico a cui
 			stiamo andando incontro, così come non c'è alcun aspetto positivo nel non provare ad
 			adattarsi. In un periodo di cambiamenti così forti, dobbiamo continuare ad aggiornarci per
 			rimanere al passo coi tempi, e evitare rischi che possano danneggiare i campi e le nostre
@@ -261,11 +321,11 @@
 			affrontare le spese necessarie a introdurre nuove tecnologie o sistemi di irrigazione, sono
 			stati costretti a mettere in vendita i propri terreni, perché il raccolto non fruttava abbastanza
 			e le entrate erano minime o quasi nulle rispetto agli sforzi richiesti durante l'anno."</li>
-			<li>Domenico Stragapede:</li>
+			<li><span style="color: #BDA69E">Domenico Stragapede</span>:</li>
 		</ul>
 		<p class="question">11) Quale sarà, secondo lei, il futuro della nocciola?</p>
 		<ul class="answer" style="margin-bottom: 30px;">
-			<li>Danilo Rita: "Non saprei dire con certezza quale sarà il futuro della nocciola. Come dicevo prima, la
+			<li><span style="color: #BDA69E">Danilo Rita</span>: "Non saprei dire con certezza quale sarà il futuro della nocciola. Come dicevo prima, la
 			maggior parte dei proprietari terrieri si affida a sistemi di irrigazione che sono collegati a dei
 			pozzi. In un futuro non troppo lontano in cui la scarsità d'acqua potrebbe diventare un
 			problema ancora più grande, questi pozzi potrebbero prosciugarsi, e a quel punto saremmo
@@ -275,7 +335,7 @@
 			come la Polonia e la Romania, forse prevedendo un clima più favorevole per il nocciolo nel
 			futuro di questi paesi. Ciò che è sicuro ed evidente è che la richiesta di questo prodotto è
 			aumentata nel corso degli anni e continuerà ad aumentare."</li>
-			<li>Domenico Stragapede:</li>
+			<li><span style="color: #BDA69E">Domenico Stragapede</span>:</li>
 		</ul>
 	</div>
 	

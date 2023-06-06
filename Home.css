@@ -298,6 +298,20 @@ body {
 	margin-bottom: 20px;
 }
 
+.grafico {
+	width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	transition: 1s all;
+}
+.grafico:hover {
+	width: 80%;
+	transition: 1s all;
+}
+
 
 /* Contenuto pagina Intervista*/
 .container {
@@ -310,16 +324,48 @@ body {
 
 .interview {
 	width: 100%;
+	position: relative;
+	margin: 15px 0;
 }
 
 #sliding_box1 {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	width: 100%;
 	background-image: linear-gradient(to bottom, #fed6b2, #fddaba, #fbdec3, #fae1cb, #f8e5d4);
+	transition: 2s all;
+	height: 100%;
 }
 
 #sliding_box2 {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	width: 100%;
 	background-image: linear-gradient(to top, #fed6b2, #fddaba, #fbdec3, #fae1cb, #f8e5d4);
+	transition: 2s all;
+	height: 100%;
+}
+
+.f1 {
+	font-family: 'Montserrat', sans-serif; 
+	font-weight: 600;
+	font-style: italic;
+	margin: 0 5% 10px 5%;
+	font-size: 20px;
+	color: #2B6723;
+}
+.f3 {
+	font-family: 'Montserrat', sans-serif; 
+	font-weight: 600;
+	font-style: italic;
+	margin: 0 5% 10px 5%;
+	font-size: 20px;
+	text-align: right;
+	color: #2B6723;
 }
 
 .colleg {
@@ -339,10 +385,11 @@ body {
 	font-family: 'Montserrat', sans-serif; 
 	font-weight: 500;
 	line-height: 1.5;
+	color: #55433C;
 }
 
 .answer {
-	padding: 0 0 0 30px;
+	padding: 0 0 0 15px;
 	margin: 5px 5% 0 5%;
 	font-size: 20px;
 	line-height: 1.5;
@@ -420,5 +467,49 @@ footer {
 		width: 100%;
 		text-align: center;
 		padding: 0px 15px;
+	}
+}
+
+/*responsive*/
+@media (max-width: 950px) {
+	.pagetitle {
+		font-size: 40px;
+	}
+}
+@media (max-width: 750px) {
+	.pagetitle {
+		font-size: 30px;
+	}
+}
+@media (max-width: 550px) {
+	.video_p {
+		width: 90%;
+	}
+	.grafico {
+		width: 80%;
+	}
+	.grafico {
+		width: 95%;
+	}
+	.content{
+		font-size: 18px;
+	}
+	.regioni{
+		font-size: 18px;
+	}
+	.f1{
+		font-size: 18px;
+	}
+	.f3{
+		font-size: 18px;
+	}
+	.question{
+		font-size: 18px;
+	}
+	.answer{
+		font-size: 18px;
+	}
+	.idea {
+		font-size: 20px;
 	}
 }
