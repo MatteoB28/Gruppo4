@@ -113,6 +113,16 @@ body {
 	border-right: 2px solid #55433C;
 	transition: 1s all;
 }
+@media (max-width: 450px) {
+	.menu {
+		width:310px;
+	}
+}
+@media (max-width: 340px) {
+	.menu {
+		width:250px;
+	}
+}
 
 .ombra {
 	width: 100%;
@@ -153,7 +163,7 @@ body {
 
 #back-to-top-btn {
 	position: fixed;
-	right: 55px;
+	right: 3%;
 	bottom: -70px;
 	width: 70px;
 	height: 70px;
@@ -176,6 +186,12 @@ body {
 #back-to-top-btn.show {
   opacity: 1;
   bottom: 55px;
+}
+@media (max-width: 535px) {
+    #back-to-top-btn {
+		width: 60px;
+		height: 60px;
+	}
 }
 
 .ipertext {
@@ -273,9 +289,39 @@ body {
 
 
 /* Contenuto pagina Presentazione*/
+.video_p {
+	width: 70%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 
 
 /* Contenuto pagina Intervista*/
+.container {
+	background-image: linear-gradient(to bottom, #fed6b2, #fddaba, #fbdec3, #fae1cb, #f8e5d4, #fae1cb, #fbdec3, #fddaba, #fed6b2);
+	width: 100%;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.interview {
+	width: 100%;
+}
+
+#sliding_box1 {
+	width: 100%;
+	background-image: linear-gradient(to bottom, #fed6b2, #fddaba, #fbdec3, #fae1cb, #f8e5d4);
+}
+
+#sliding_box2 {
+	width: 100%;
+	background-image: linear-gradient(to top, #fed6b2, #fddaba, #fbdec3, #fae1cb, #f8e5d4);
+}
+
 .colleg {
 	color: #55433C;
 	padding: 0px;
@@ -289,7 +335,10 @@ body {
 .question {
 	padding: 0;
 	margin: 20px 5% 0 5%;
-	font-size: 25px;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif; 
+	font-weight: 500;
+	line-height: 1.5;
 }
 
 .answer {
@@ -297,6 +346,8 @@ body {
 	margin: 5px 5% 0 5%;
 	font-size: 20px;
 	line-height: 1.5;
+	font-family: 'Montserrat', sans-serif; 
+	font-weight: 400;
 }
 .answer li {
 	margin: 10px 0 0 0;
